@@ -70,7 +70,7 @@ export default function ContactPage() {
       </section>
 
       {/* CONTACT SECTION */}
-      <section className="relative w-full py-24 px-5 md:px-10 lg:px-20 bg-linear-to-b from-white via-blue-50 to-white overflow-hidden">
+      <section className="relative w-full py-27 px-5 md:px-10 lg:px-20 bg-linear-to-b from-white via-blue-50 to-white overflow-hidden">
 
         {/* BACKGROUND GLOW */}
         <div className="absolute top-0 left-0 w-72 h-72 bg-blue-200/30 rounded-full blur-3xl"></div>

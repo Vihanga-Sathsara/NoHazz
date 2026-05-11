@@ -63,7 +63,7 @@ export default function NewsEventsPage() {
     <>
       <SecondNavigation />
 
-      <section className="w-full bg-gray-50">
+      <section className="w-full bg-gray-50 py-27">
 
         {/* HEADER */}
         <div className="bg-linear-to-r from-blue-50 to-cyan-50 py-20 text-center px-5 md:px-10 lg:px-20">

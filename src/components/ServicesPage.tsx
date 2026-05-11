@@ -38,7 +38,7 @@ export default function ServicesSection() {
   return (
     <>
      <SecondNavigation></SecondNavigation>
-    <section className="relative w-full overflow-hidden py-5 px-5 md:px-10 lg:px-20 bg-linear-to-b from-white via-blue-50 to-white">
+    <section className="relative w-full overflow-hidden py-27 px-5 md:px-10 lg:px-20 bg-linear-to-b from-white via-blue-50 to-white">
        
       {/* Background Glow */}
       <div className="absolute top-0 left-0 w-72 h-72 bg-blue-300/20 rounded-full blur-3xl"></div>

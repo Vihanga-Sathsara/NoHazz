@@ -6,7 +6,7 @@ export default function AboutPage() {
   return (
     <>
       <SecondNavigation></SecondNavigation>
-    <div className="relative w-full bg-linear-to-b from-white via-blue-50 to-white overflow-hidden">
+    <div className="relative w-full bg-linear-to-b from-white via-blue-50 to-white overflow-hidden py-27">
         
       {/* BACKGROUND GLOWS */}
       <div className="absolute top-0 left-0 w-80 h-80 bg-blue-300/20 blur-3xl rounded-full"></div>

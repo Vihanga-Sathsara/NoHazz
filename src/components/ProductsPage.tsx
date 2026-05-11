@@ -20,7 +20,7 @@ export default function Products() {
   return (
     <>
     <SecondNavigation></SecondNavigation>
-    <section className="relative w-full py-24 px-5 md:px-10 lg:px-20 overflow-hidden bg-linear-to-b from-white via-blue-50 to-white">
+    <section className="relative w-full py-27 px-5 md:px-10 lg:px-20 overflow-hidden bg-linear-to-b from-white via-blue-50 to-white">
         
       {/* BACKGROUND GLOWS */}
       <div className="absolute top-0 left-0 w-80 h-80 bg-blue-300/20 rounded-full blur-3xl animate-pulse"></div>
