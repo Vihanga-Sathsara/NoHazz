@@ -1,8 +1,7 @@
-import { useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import SecondNavigation from "./SecondNavigation";
 
 export default function NewsEventsPage() {
+
   const news = [
     {
       title: "VIP Distributor & Product Launch Ceremony by Green Panther Pvt Ltd",
@@ -54,27 +53,17 @@ export default function NewsEventsPage() {
           "https://res.cloudinary.com/dvnoyis73/image/upload/q_auto/f_auto/v1778505112/IMG-20260511-WA0117.jpg_kt1zq1.jpg",
           "https://res.cloudinary.com/dvnoyis73/image/upload/q_auto/f_auto/v1778505119/IMG-20260511-WA0042.jpg_fxqnke.jpg",
         ],
+        videos:[
+            "https://res.cloudinary.com/dvnoyis73/video/upload/q_auto/f_auto/v1778493240/VID-20260511-WA0133_emkymh.mp4",
+        ],
     },
   ];
-
-  const [index, setIndex] = useState(0);
-  const [expanded, setExpanded] = useState(false);
-
-  const next = () => {
-    setIndex((p) => (p + 1) % news.length);
-    setExpanded(false);
-  };
-
-  const prev = () => {
-    setIndex((p) => (p - 1 + news.length) % news.length);
-    setExpanded(false);
-  };
 
   return (
     <>
       <SecondNavigation />
 
-      <section className="w-full bg-white">
+      <section className="w-full bg-gray-50">
 
         {/* HEADER */}
         <div className="bg-linear-to-r from-blue-50 to-cyan-50 py-20 text-center px-5 md:px-10 lg:px-20">
@@ -93,91 +82,112 @@ export default function NewsEventsPage() {
           </p>
         </div>
 
-        {/* MAIN CARD */}
-        <div className="max-w-5xl mx-auto px-5 py-16">
+        {/* NEWS LIST */}
+        <div className="max-w-6xl mx-auto px-5 py-16 space-y-10">
 
-          <div className="bg-white border border-gray-100 shadow-2xl rounded-3xl overflow-hidden">
+          {news.map((item, i) => (
+            <div
+              key={i}
+              className="
+                bg-white
+                border border-gray-100
+                shadow-xl
+                rounded-3xl
+                overflow-hidden
+                hover:shadow-2xl
+                transition
+              "
+            >
 
-            {/* TITLE */}
-            <div className="p-6 md:p-10 border-b">
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
-                {news[index].title}
-              </h2>
-            </div>
+              {/* TITLE + DESC */}
+              <div className="p-6 md:p-10 space-y-3">
 
-            {/* IMAGE GRID */}
-            <div className="p-6 md:p-10">
+                <h2 className="text-xl md:text-3xl font-bold text-gray-900">
+                  {item.title}
+                </h2>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                <p className="text-gray-600 text-sm md:text-base">
+                  {item.desc}
+                </p>
 
-                {news[index].images
-                  .slice(0, expanded ? news[index].images.length : 3)
-                  .map((img, i) => (
+              </div>
+
+              {/* IMAGES */}
+              <div className="px-6 md:px-10 pb-8">
+
+                <div className="
+                  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3
+                  gap-4
+                ">
+
+                  {item.images.map((img, index) => (
                     <div
-                      key={i}
-                      className="h-52 sm:h-60 overflow-hidden rounded-xl"
+                      key={index}
+                      className="
+                        h-52 sm:h-60 md:h-64
+                        overflow-hidden rounded-2xl
+                        group
+                      "
                     >
                       <img
                         src={img}
-                        className="w-full h-full object-cover hover:scale-110 transition duration-300"
+                        className="
+                          w-full h-full object-cover
+                          transition duration-500
+                          group-hover:scale-110
+                        "
                       />
                     </div>
                   ))}
+                  {item.videos && item.videos.map((video, index) => (
+                    <div
+                        key={index}
+                        className="
+                        relative
+                        h-52 sm:h-60 md:h-64 lg:h-72
+                        overflow-hidden
+                        rounded-2xl
+                        group
+                        bg-black
+                        shadow-lg
+                        "
+                    >
+                        <video
+                        src={video}
+                        className="
+                            w-full h-full
+                            object-cover
+                            transition duration-500
+                            group-hover:scale-105
+                        "
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        controls
+                        />
 
-              </div>
-
-              {/* SEE MORE / LESS */}
-              {news[index].images.length > 3 && (
-                <div className="flex justify-center mt-6">
-                  <button
-                    onClick={() => setExpanded(!expanded)}
-                    className="px-6 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition"
-                  >
-                    {expanded ? "Show Less" : "See More"}
-                  </button>
+                        {/* Optional overlay */}
+                        <div
+                        className="
+                            absolute inset-0
+                            bg-black/10
+                            group-hover:bg-black/0
+                            transition duration-300
+                            pointer-events-none
+                        "
+                        ></div>
+                    </div>
+                    ))}
                 </div>
-              )}
 
-              {/* DESCRIPTION */}
-              <p className="text-gray-600 mt-6 text-sm md:text-base">
-                {news[index].desc}
-              </p>
-
-            </div>
-
-            {/* CONTROLS */}
-            <div className="flex items-center justify-between px-6 md:px-10 pb-8">
-
-              <button
-                onClick={prev}
-                className="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center hover:scale-110 transition"
-              >
-                <ChevronLeft size={18} />
-              </button>
-
-              <div className="flex gap-2">
-                {news.map((_, i) => (
-                  <div
-                    key={i}
-                    className={`w-2 h-2 rounded-full ${
-                      i === index ? "bg-blue-600 scale-125" : "bg-gray-300"
-                    }`}
-                  />
-                ))}
               </div>
 
-              <button
-                onClick={next}
-                className="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center hover:scale-110 transition"
-              >
-                <ChevronRight size={18} />
-              </button>
-
             </div>
-
-          </div>
+          ))}
 
         </div>
+
       </section>
     </>
   );

@@ -37,11 +37,6 @@ export default function NewsEvents() {
   const videos = [
     "https://res.cloudinary.com/dvnoyis73/video/upload/q_auto/f_auto/v1778493240/VID-20260511-WA0133_emkymh.mp4",
 
-    "https://res.cloudinary.com/dvnoyis73/video/upload/q_auto/f_auto/v1778493240/VID-20260511-WA0133_emkymh.mp4",
-
-    "https://res.cloudinary.com/dvnoyis73/video/upload/q_auto/f_auto/v1778493240/VID-20260511-WA0133_emkymh.mp4",
-
-    "https://res.cloudinary.com/dvnoyis73/video/upload/q_auto/f_auto/v1778493240/VID-20260511-WA0133_emkymh.mp4",
   ];
 
   const [index, setIndex] = useState(0);
