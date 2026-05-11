@@ -94,7 +94,7 @@ export default function NewsEvents() {
         />
 
         {/* DARK PREMIUM OVERLAY */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-950/90 via-black/70 to-blue-900/90"></div>
+        <div className="absolute inset-0 bg-linear-to-br from-blue-950/90 via-black/70 to-blue-900/90"></div>
 
         {/* EXTRA GLOW */}
         <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"></div>
@@ -136,7 +136,7 @@ export default function NewsEvents() {
               bg-white/10
               backdrop-blur-2xl
               border border-white/10
-              rounded-[2rem]
+              rounded-4xl
               p-6 md:p-10
               overflow-hidden
               shadow-[0_20px_80px_rgba(0,0,0,0.45)]
@@ -144,7 +144,7 @@ export default function NewsEvents() {
           >
 
             {/* CARD GLOW */}
-            <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/10 via-transparent to-blue-500/10"></div>
+            <div className="absolute inset-0 bg-linear-to-br from-cyan-400/10 via-transparent to-blue-500/10"></div>
 
             <div className="relative z-10">
 
@@ -236,12 +236,12 @@ export default function NewsEvents() {
           <div className="relative w-full">
 
             {/* OUTER GLOW */}
-            <div className="absolute -inset-3 bg-cyan-400/20 blur-3xl rounded-[2rem]"></div>
+            <div className="absolute -inset-3 bg-cyan-400/20 blur-3xl rounded-4xl"></div>
 
             <div
               className="
                 relative
-                rounded-[2rem]
+                rounded-4xl
                 overflow-hidden
                 border border-white/10
                 shadow-[0_20px_80px_rgba(0,0,0,0.45)]
@@ -253,10 +253,10 @@ export default function NewsEvents() {
                 key={index}
                 className="
                   w-full
-                  h-[260px]
-                  sm:h-[380px]
-                  md:h-[500px]
-                  lg:h-[550px]
+                  h-65
+                  sm:h-95
+                  md:h-125
+                  lg:h-137.5
                   object-cover
                 "
                 controls

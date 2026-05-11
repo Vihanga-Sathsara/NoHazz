@@ -57,6 +57,7 @@ function NavigationBar() {
                 text-gray-700 font-medium
                 hover:text-blue-600
                 transition relative
+                cursor-pointer
               "
             >
               {item.name}
@@ -83,6 +84,7 @@ function NavigationBar() {
             px-5 py-2 rounded-full
             bg-blue-600 text-white
             hover:bg-blue-700 transition
+            cursor-pointer
           ">
             Admin Portal
           </button>
@@ -92,7 +94,7 @@ function NavigationBar() {
         {/* MOBILE */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="lg:hidden text-blue-700"
+          className="lg:hidden text-blue-700 cursor-pointer"
         >
           {isOpen ? <X /> : <Menu />}
         </button>
@@ -112,7 +114,7 @@ function NavigationBar() {
             <button
               key={item.name}
               onClick={() => window.open(item.path, "_blank")}
-              className="text-left text-gray-700 hover:text-blue-600"
+              className="text-left text-gray-700 hover:text-blue-600 cursor-pointer"
             >
               {item.name}
             </button>
@@ -121,6 +123,7 @@ function NavigationBar() {
             px-5 py-2 rounded-full
             bg-green-600 text-white
             hover:bg-green-700 transition
+            cursor-pointer
           ">
             Customer Portal
           </button>
@@ -129,6 +132,7 @@ function NavigationBar() {
             px-5 py-2 rounded-full
             bg-blue-600 text-white
             hover:bg-blue-700 transition
+            cursor-pointer
           ">
             Admin Portal
           </button>

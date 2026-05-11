@@ -105,16 +105,14 @@ const socials = [
 
             <div className="flex flex-col gap-3 text-sm">
 
-              {quickLinks.map((item) => (
-                <a
+             {quickLinks.map((item) => (
+                <button
                   key={item.name}
-                  href={item.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  onClick={() => window.open(item.link, "_blank")}
                   className="
                     relative w-fit text-gray-700
                     hover:text-blue-700 transition
-                    group
+                    group cursor-pointer
                   "
                 >
                   {item.name}
@@ -128,10 +126,8 @@ const socials = [
                       transition-all duration-300
                     "
                   ></span>
-
-                </a>
+                </button>
               ))}
-
             </div>
           </div>
 

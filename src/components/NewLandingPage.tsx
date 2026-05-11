@@ -8,6 +8,7 @@ import NohazzScientificSection from "./NohazzScientificPage"
 import NewsEvents from "./News&Events"
 import Products from "./Products"
 import AboutDescription from "./AboutDescription"
+import HeroVideo from "./HeroVideo";
 
 
 function LandingPage() {
@@ -53,6 +54,7 @@ function LandingPage() {
                             transition-all duration-300
                             hover:text-blue-700
                             group
+                            cursor-pointer
                         "
                         >
                         {item.name}
@@ -76,6 +78,7 @@ function LandingPage() {
             px-5 py-2 rounded-full
             bg-green-600 text-white
             hover:bg-green-700 transition
+            cursor-pointer
           ">
             Customer Portal
           </button>
@@ -84,6 +87,7 @@ function LandingPage() {
             px-5 py-2 rounded-full
             bg-blue-600 text-white
             hover:bg-blue-700 transition
+            cursor-pointer
           ">
             Admin Portal
           </button>
@@ -93,20 +97,7 @@ function LandingPage() {
 </section>
 <section className="w-full py-25 lg:py-10 flex flex-col items-center justify-center">
     <div className="w-full flex justify-center px-4 md:px-10 lg:px-10 py-5">
-        <div className="w-full aspect-video overflow-hidden">
-            <video
-                className="w-full h-full object-cover"
-
-                autoPlay
-                loop
-                playsInline
-            >
-                <source
-                src="https://res.cloudinary.com/dvnoyis73/video/upload/q_auto/f_auto/v1778479442/DREAMLIFE.LK_NOHAZZ_WEB_LOOP_wll32w.mp4"
-                type="video/mp4"
-                />
-            </video>
-        </div>
+        <HeroVideo></HeroVideo>
     </div>
 </section>
 <section>

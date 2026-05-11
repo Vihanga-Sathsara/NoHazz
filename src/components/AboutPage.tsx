@@ -1,4 +1,6 @@
-import SecondNavigation from "./SecondNavigation";
+import SecondNavigation from "./SecondNavigation"
+import companyLogo from "../assets/company-logo.png"
+import brandLog from "../assets/brand-logo.png"
 
 export default function AboutPage() {
   return (
@@ -29,6 +31,26 @@ export default function AboutPage() {
         </p>
 
       </section>
+
+      <section className="grid grid-cols-1 lg:grid-cols-2 gap-10 w-full items-center justify-center py-6">
+
+        <div className="flex justify-center lg:justify-end">
+            <img
+            src={companyLogo}
+            alt="Company Logo"
+            className="w-40 sm:w-56 md:w-64 lg:w-72 h-auto object-contain"
+            />
+        </div>
+
+        <div className="flex justify-center lg:justify-start">
+            <img
+            src={brandLog}
+            alt="Brand Logo"
+            className="w-40 sm:w-56 md:w-64 lg:w-72 h-auto object-contain"
+            />
+        </div>
+
+</section>
 
       {/* STORY SECTION */}
       <section className="max-w-7xl mx-auto px-5 md:px-10 lg:px-20 py-10">
