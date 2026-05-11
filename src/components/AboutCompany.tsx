@@ -1,103 +1,128 @@
-import { useEffect, useRef } from "react"
-import gsap from "gsap"
 
 function AboutCompany() {
-  const sectionRef = useRef<HTMLDivElement | null>(null)
-
-  useEffect(() => {
-    if (!sectionRef.current) return
-
-    const elements = sectionRef.current.querySelectorAll(".anim")
-
-    gsap.fromTo(
-      elements,
-      {
-        opacity: 0,
-        y: 60,
-        filter: "blur(10px)",
-      },
-      {
-        opacity: 1,
-        y: 0,
-        filter: "blur(0px)",
-        duration: 1,
-        stagger: 0.12,
-        ease: "power4.out",
-      }
-    )
-  }, [])
-
   return (
-    <section
-      id="about-company"
-      ref={sectionRef}
-      className="w-full min-h-screen bg-[#061311] text-white px-5 sm:px-8 md:px-16 lg:px-24 py-16 md:py-24 overflow-hidden"
-    >
-      {/* HEADER */}
-      <div className="anim text-center mb-12">
-        <p className="text-green-300 tracking-[4px] text-xs md:text-sm uppercase">
-          Brand • History • Product • Health & Beauty
-        </p>
+    <section className="relative w-full overflow-hidden py-20 px-5 md:px-10 lg:px-20 bg-linear-to-b from-white via-blue-50 to-white">
 
-        <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mt-3">
-          About Us
-        </h1>
-      </div>
+    {/* Soft Background Glow */}
+    <div className="absolute top-0 left-0 w-72 h-72 bg-blue-200/30 rounded-full blur-3xl"></div>
+    <div className="absolute bottom-0 right-0 w-72 h-72 bg-cyan-200/30 rounded-full blur-3xl"></div>
 
-      {/* WHO WE ARE */}
-      <div className="anim space-y-6 text-center max-w-3xl mx-auto mb-16">
-        <h2 className="text-xl md:text-2xl font-semibold text-green-300">
-          Who We Are
-        </h2>
+    <div className="relative max-w-7xl mx-auto">
 
-        <p className="text-gray-300 leading-relaxed text-sm md:text-base">
-          Green Panther Pvt Ltd is a proudly Sri Lankan company committed to transforming the way we clean—with care for both people and the planet. We specialize in eco-friendly and human-safe detergent gel made from biodegradable ingredients. Our goal is simple: provide powerful cleaning that’s gentle on skin, safe for families, and kind to nature.
-        </p>
-      </div>
+        {/* Heading */}
+        <div className="text-center mb-14">
+            <p className="text-sm uppercase tracking-[0.4em] text-blue-700 font-semibold mb-4">
+                Our Core Values
+            </p>
 
-      {/* VALUES */}
-      <div className="anim">
-        <h2 className="text-center text-xl md:text-2xl font-semibold text-green-300 mb-8">
-          What We Stand For
-        </h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+                What We <span className="text-blue-700">Stand For</span>
+            </h2>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {[
-            { title: "Sustainability", desc: "Biodegradable ingredients & low waste production" },
-            { title: "Honesty", desc: "Transparent labeling and trust-based approach" },
-            { title: "Responsibility", desc: "Protecting people & environment" },
-            { title: "Health & Safety", desc: "Skin-safe, family-safe chemistry" },
-            { title: "Innovation", desc: "Continuous green technology improvement" },
-          ].map((item) => (
-            <div
-              key={item.title}
-              className="p-5 bg-black/20 border border-white/10 rounded-xl hover:border-green-400/40 hover:scale-[1.02] transition-all duration-300"
-            >
-              <h3 className="text-white font-semibold mb-2">
-                {item.title}
-              </h3>
-              <p className="text-gray-400 text-sm">
-                {item.desc}
-              </p>
-            </div>
-          ))}
+            <div className="w-24 h-1 bg-blue-600 mx-auto mt-6 rounded-full"></div>
         </div>
-      </div>
 
-      {/* WHY CHOOSE */}
-      <div className="anim mt-16 md:mt-20 text-center">
-        <h2 className="text-xl md:text-2xl font-semibold text-green-300 mb-6">
-          Why Choose Green Panther?
-        </h2>
+        {/* Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
 
-        <div className="flex flex-col gap-2 text-gray-300 text-sm md:text-base">
-          <p>✔ 100% biodegradable & non-toxic</p>
-          <p>✔ Free from SLS, parabens, and phosphates</p>
-          <p>✔ Proudly made in Sri Lanka</p>
-          <p>✔ Eco-friendly packaging commitment</p>
+            {[
+                {
+                    title: "Sustainability",
+                    desc: "Biodegradable ingredients and low-waste production methods that reduce environmental impact."
+                },
+                {
+                    title: "Honesty",
+                    desc: "Transparent labeling, ethical practices, and a trust-based relationship with every customer."
+                },
+                {
+                    title: "Responsibility",
+                    desc: "Protecting people, communities, and the environment through conscious innovation."
+                },
+                {
+                    title: "Health & Safety",
+                    desc: "Human-safe formulas designed to protect families, skin, and everyday wellbeing."
+                },
+                {
+                    title: "Innovation",
+                    desc: "Continuous improvement through modern green technologies and smarter solutions."
+                },
+                {
+                    title: "Customer Commitment",
+                    desc: "Delivering reliable quality, exceptional care, and long-term customer satisfaction."
+                }
+            ].map((item, index) => (
+                <div
+                    key={index}
+                    className="
+                        group
+                        relative
+                        overflow-hidden
+                        bg-white/80
+                        backdrop-blur-xl
+                        border border-blue-100
+                        rounded-3xl
+                        p-7
+                        hover:border-blue-300
+                        hover:-translate-y-2
+                        transition-all
+                        duration-500
+                        shadow-[0_10px_40px_rgba(37,99,235,0.08)]
+                        hover:shadow-[0_20px_60px_rgba(37,99,235,0.15)]
+                    "
+                >
+
+                    {/* Hover Gradient */}
+                    <div className="
+                        absolute
+                        inset-0
+                        opacity-0
+                        group-hover:opacity-100
+                        bg-linear-to-br
+                        from-blue-100/40
+                        to-cyan-100/40
+                        transition-all
+                        duration-500
+                    "></div>
+
+                    {/* Number Icon */}
+                    <div className="
+                        relative
+                        w-14
+                        h-14
+                        flex
+                        items-center
+                        justify-center
+                        rounded-2xl
+                        bg-linear-to-br
+                        from-blue-600
+                        to-cyan-500
+                        text-white
+                        font-bold
+                        text-lg
+                        shadow-lg
+                        mb-6
+                    ">
+                        0{index + 1}
+                    </div>
+
+                    {/* Content */}
+                    <div className="relative">
+                        <h3 className="text-gray-900 text-xl font-semibold mb-4">
+                            {item.title}
+                        </h3>
+
+                        <p className="text-gray-600 leading-relaxed text-sm md:text-base">
+                            {item.desc}
+                        </p>
+                    </div>
+
+                </div>
+            ))}
+
         </div>
-      </div>
-    </section>
+    </div>
+</section>
+
   )
 }
 

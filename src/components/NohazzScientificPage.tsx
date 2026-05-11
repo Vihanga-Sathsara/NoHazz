@@ -1,14 +1,20 @@
 import { useEffect, useState } from "react";
 
-export default function NohazzScientificPage() {
+import {
+  FlaskConical,
+  Droplets,
+  ShieldCheck,
+  Leaf,
+} from "lucide-react";
 
-  /* FLOW CHART ANIMATION */
+export default function NohazzScientificSection() {
+
   const [activeStep, setActiveStep] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveStep((prev) => (prev + 1) % 5);
-    }, 1500);
+    }, 1800);
 
     return () => clearInterval(interval);
   }, []);
@@ -16,282 +22,263 @@ export default function NohazzScientificPage() {
   const flowSteps = [
     "Phosphate Runoff",
     "Nutrient Overload",
-    "Algal Bloom Explosion",
+    "Algal Bloom",
     "Oxygen Depletion",
     "Aquatic Collapse",
   ];
 
+  const scienceCards = [
+    {
+      title: "Advanced Cleaning Efficiency",
+      desc: "Precision surfactant engineering removes deep contaminants while protecting fabric quality.",
+      icon: <FlaskConical size={28} />,
+    },
+
+    {
+      title: "Micellar Suspension Technology",
+      desc: "Advanced micellar systems capture and isolate dirt particles for effective rinse removal.",
+      icon: <Droplets size={28} />,
+    },
+
+    {
+      title: "Skin-Conscious Chemistry",
+      desc: "Balanced formulation engineered to remain gentle on sensitive skin-contact fabrics.",
+      icon: <ShieldCheck size={28} />,
+    },
+
+    {
+      title: "Phosphate-Free Innovation",
+      desc: "High-performance cleaning without contributing to ecological phosphate pollution.",
+      icon: <Leaf size={28} />,
+    },
+  ];
+
   return (
-    <div id="nohazz-science" className=" bg-[#050B0A] text-white overflow-hidden min-h-screen font-sans relative">
+    <section className="relative w-full overflow-hidden py-24 px-5 md:px-10 lg:px-20 bg-gradient-to-b from-white via-blue-50 to-white">
 
-      {/* BACKGROUND GLOW */}
-      <div className="fixed inset-0 -z-10 overflow-hidden">
+      {/* BACKGROUND GLOWS */}
+      <div className="absolute top-0 left-0 w-72 h-72 bg-blue-200/30 rounded-full blur-3xl"></div>
 
-        <div className="absolute top-0 left-0 w-62.5 h-62.5 md:w-125 md:h-125 bg-green-400/20 blur-3xl rounded-full animate-pulse"></div>
-
-        <div className="absolute bottom-0 right-0 w-62.5 h-62.5 md:w-125 md:h-125 bg-green-700/20 blur-3xl rounded-full animate-pulse"></div>
-
-      </div>
+      <div className="absolute bottom-0 right-0 w-72 h-72 bg-cyan-200/30 rounded-full blur-3xl"></div>
 
       {/* FLOATING ELEMENTS */}
-      <div className="absolute top-20 left-5 md:left-10 w-16 h-16 md:w-20 md:h-20 rounded-full border border-green-300/30 animate-spin"></div>
+      <div className="absolute top-20 left-10 w-20 h-20 border border-blue-300/30 rounded-full animate-spin"></div>
 
-      <div className="absolute bottom-20 right-5 md:right-20 w-20 h-20 md:w-32 md:h-32 rounded-full border border-green-400/20 animate-ping"></div>
+      <div className="absolute bottom-20 right-20 w-28 h-28 border border-cyan-300/20 rounded-full animate-pulse"></div>
 
-      <div className="absolute top-1/2 left-10 md:left-20 w-4 h-4 md:w-5 md:h-5 bg-green-300 rounded-full animate-bounce"></div>
+      <div className="relative max-w-7xl mx-auto">
 
-      {/* SCIENTIFIC FRAMEWORK */}
-      <section className="py-20 md:py-28 px-4 md:px-6 max-w-7xl mx-auto">
+        {/* HEADER */}
+        <div className="text-center mb-20">
 
-        <div className="text-center mb-16 md:mb-20 animate-fadeIn">
-          <h2 className="text-3xl sm:text-4xl md:text-6xl font-black text-green-300 leading-tight">
-            THE NOHAZZ SCIENTIFIC FRAMEWORK
+          <p className="text-sm uppercase tracking-[0.4em] text-blue-700 font-semibold mb-4">
+            Scientific Innovation
+          </p>
+
+          <h2 className="text-4xl md:text-6xl font-black text-gray-900 leading-tight">
+            THE <span className="text-blue-700">NOHAZZ</span>
+            <br />
+            SCIENTIFIC FRAMEWORK
           </h2>
 
-          <div className="w-28 md:w-40 h-2 bg-green-700 rounded-full mx-auto mt-5 animate-pulse"></div>
+          <div className="w-28 h-1 bg-blue-600 rounded-full mx-auto mt-6"></div>
 
-          <p className="mt-6 text-base md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Six integrated pillars engineered for powerful cleaning performance
-            without environmental compromise.
+          <p className="mt-8 text-gray-600 text-base md:text-xl max-w-3xl mx-auto leading-relaxed">
+            Advanced eco-cleaning science engineered for powerful performance,
+            skin-conscious safety, and environmental sustainability.
           </p>
+
         </div>
 
-        {/* CARDS */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
+        {/* MAIN GRID */}
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-14 items-center">
 
-          {[
-            {
-              title: "Advanced Soil Detachment Efficiency",
-              desc: "Precision surfactant engineering designed to remove deep contaminants while preserving fabric structure.",
-            },
-            {
-              title: "Micellar Suspension Chemistry",
-              desc: "Stabilized micelles capture and isolate dirt particles for advanced suspension and removal.",
-            },
-            {
-              title: "Ultra-Low Residue Rinse Engineering",
-              desc: "Reduces chemical retention on fabrics through optimized rinse dispersion systems.",
-            },
-            {
-              title: "Skin-Conscious Fabric Interaction",
-              desc: "Balanced chemistry engineered to remain gentle on skin-contact textiles.",
-            },
-            {
-              title: "Phosphate-Free Environmental Protection",
-              desc: "High-performance cleaning without ecological phosphate pollution.",
-            },
-            {
-              title: "Zero Plastic Circular System Design",
-              desc: "A sustainable packaging ecosystem minimizing long-term plastic waste impact.",
-            },
-          ].map((item, i) => (
+          {/* LEFT SIDE */}
+          <div className="space-y-6">
 
-            <div
-              key={i}
-              className="group relative p-6 md:p-8 rounded-[30px] bg-white/5 border border-green-400/20 backdrop-blur-xl shadow-xl hover:-translate-y-5 hover:scale-[1.03] hover:shadow-[0_20px_60px_rgba(34,197,94,0.25)] transition-all duration-700 overflow-hidden"
-            >
+            {scienceCards.map((item, i) => (
 
-              {/* POPUP GLOW */}
-              <div className="absolute inset-0 bg-linear-to-br from-transparent to-green-400/10 opacity-0 group-hover:opacity-100 transition duration-700"></div>
+              <div
+                key={i}
+                className="
+                  group
+                  relative
+                  overflow-hidden
+                  bg-white/80
+                  backdrop-blur-xl
+                  border border-blue-100
+                  rounded-3xl
+                  p-6 md:p-7
+                  hover:-translate-y-2
+                  hover:border-blue-300
+                  transition-all
+                  duration-500
+                  shadow-[0_10px_40px_rgba(37,99,235,0.08)]
+                  hover:shadow-[0_20px_60px_rgba(37,99,235,0.15)]
+                "
+              >
 
-              {/* FLOATING DOT */}
-              <div className="absolute top-4 right-4 w-3 h-3 rounded-full bg-green-300 animate-ping"></div>
+                {/* HOVER GLOW */}
+                <div className="
+                  absolute inset-0 opacity-0
+                  group-hover:opacity-100
+                  bg-gradient-to-br
+                  from-blue-100/40
+                  to-cyan-100/40
+                  transition-all duration-500
+                "></div>
 
-              <div className="relative z-10">
+                <div className="relative flex gap-5 items-start">
 
-                <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-green-700 text-white flex items-center justify-center text-xl md:text-2xl font-bold mb-5 md:mb-6 group-hover:rotate-12 transition duration-700">
-                  0{i + 1}
+                  {/* ICON */}
+                  <div
+                    className="
+                      min-w-14
+                      h-14
+                      rounded-2xl
+                      bg-gradient-to-br
+                      from-blue-600
+                      to-cyan-500
+                      flex
+                      items-center
+                      justify-center
+                      text-white
+                      shadow-lg
+                      group-hover:rotate-12
+                      group-hover:scale-110
+                      transition-all
+                      duration-500
+                    "
+                  >
+                    {item.icon}
+                  </div>
+
+                  {/* TEXT */}
+                  <div>
+
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">
+                      {item.title}
+                    </h3>
+
+                    <p className="text-gray-600 leading-relaxed text-sm md:text-base">
+                      {item.desc}
+                    </p>
+
+                  </div>
+
                 </div>
+              </div>
+            ))}
 
-                <h3 className="text-xl md:text-2xl font-bold text-green-300 mb-4 leading-snug">
-                  {item.title}
+          </div>
+
+          {/* RIGHT SIDE FLOW */}
+          <div className="relative flex justify-center">
+
+            <div className="w-full max-w-md space-y-5">
+
+              <div className="text-center mb-8">
+
+                <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
+                  Environmental Impact Flow
                 </h3>
 
-                <p className="text-gray-300 leading-relaxed text-sm md:text-lg">
-                  {item.desc}
+                <p className="text-gray-600 mt-3">
+                  Why phosphate-free chemistry matters.
                 </p>
 
               </div>
-            </div>
-          ))}
-        </div>
-
-        {/* QUOTE */}
-        <div className="mt-16 md:mt-20 text-center">
-
-          <div className="inline-block px-6 md:px-10 py-5 md:py-6 bg-green-700 rounded-[25px] shadow-2xl max-w-4xl hover:scale-105 transition duration-700">
-
-            <p className="text-green-300 text-lg md:text-2xl font-semibold tracking-wide leading-relaxed">
-              “This is not detergent formulation. This is systems-level cleaning science.”
-            </p>
-
-          </div>
-        </div>
-      </section>
-
-      {/* ENVIRONMENTAL SCIENCE */}
-      <section className="relative py-20 md:py-32 bg-linear-to-br from-[#050B0A] via-[#071A16] to-[#0B2A22] overflow-hidden">
-
-        {/* GRID */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle,#86efac_1px,transparent_1px)] bg-size-[30px_30px]"></div>
-        </div>
-
-        <div className="relative max-w-7xl mx-auto px-4 md:px-6 grid grid-cols-1 lg:grid-cols-2 gap-14 md:gap-16 items-center">
-
-          {/* LEFT */}
-          <div>
-
-            <div className="inline-block px-4 py-2 rounded-full bg-green-400/10 border border-green-300/20 mb-6 md:mb-8 backdrop-blur-xl">
-              <p className="text-green-300 uppercase tracking-[3px] text-xs md:text-sm font-semibold">
-                Environmental Chemistry
-              </p>
-            </div>
-
-            <h2 className="text-3xl sm:text-4xl md:text-6xl font-black text-white leading-tight">
-              PHOSPHATE-FREE
-              <span className="block text-green-300">
-                SCIENTIFIC INNOVATION
-              </span>
-            </h2>
-
-            <p className="mt-6 md:mt-8 text-base md:text-lg text-gray-300 leading-relaxed">
-              Traditional phosphate-based detergents can trigger ecological chain
-              reactions in aquatic systems, causing severe oxygen depletion and
-              ecosystem destruction.
-            </p>
-
-            {/* EFFECT BOXES */}
-            <div className="mt-10 md:mt-12 space-y-4 md:space-y-5">
-
-              {[
-                "Fish mortality",
-                "Oxygen-starved lakes",
-                "Biodiversity loss",
-                "Water quality degradation",
-              ].map((item, i) => (
-
-                <div
-                  key={i}
-                  className="flex items-center gap-4 bg-white/5 border border-white/10 rounded-2xl p-4 md:p-5 backdrop-blur-md hover:translate-x-4 hover:bg-green-400/10 transition-all duration-500"
-                >
-
-                  <div className="w-3 h-3 md:w-4 md:h-4 rounded-full bg-green-300 animate-pulse"></div>
-
-                  <p className="text-white text-sm md:text-lg">
-                    {item}
-                  </p>
-
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* FLOW CHART */}
-          <div className="relative flex justify-center items-center">
-
-            <div className="space-y-5 md:space-y-6 w-full max-w-full sm:max-w-md">
 
               {flowSteps.map((step, i) => (
 
                 <div key={i}>
 
                   <div
-                    className={`relative group rounded-3xl p-5 md:p-6 text-center transition-all duration-700 border overflow-hidden
-                      
+                    className={`
+                      relative
+                      overflow-hidden
+                      rounded-3xl
+                      p-5
+                      text-center
+                      border
+                      transition-all
+                      duration-700
+
                       ${
                         activeStep === i
-                          ? "bg-green-400/20 border-green-300 scale-105 shadow-[0_0_40px_rgba(74,222,128,0.4)]"
-                          : "bg-white/10 border-white/10"
+                          ? "bg-gradient-to-r from-blue-600 to-cyan-500 text-white border-blue-300 shadow-[0_0_40px_rgba(59,130,246,0.35)] scale-105"
+                          : "bg-white/80 text-gray-700 border-blue-100"
                       }
                     `}
                   >
 
-                    {/* ACTIVE FLOW */}
+                    {/* SHINE EFFECT */}
                     {activeStep === i && (
-                      <div className="absolute inset-0 bg-linear-to-r from-transparent via-green-300/20 to-transparent animate-pulse"></div>
+                      <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent animate-pulse"></div>
                     )}
 
-                    <p className="relative z-10 text-green-300 text-lg md:text-xl font-bold">
+                    <p className="relative z-10 text-lg md:text-xl font-semibold">
                       {step}
                     </p>
 
                   </div>
 
                   {i !== flowSteps.length - 1 && (
+
                     <div className="flex justify-center py-3">
 
                       <div
-                        className={`w-1 h-10 transition-all duration-700 ${
-                          activeStep > i
-                            ? "bg-green-300 shadow-[0_0_20px_rgba(74,222,128,0.8)]"
-                            : "bg-green-300/30"
-                        }`}
+                        className={`
+                          w-1 h-10 rounded-full transition-all duration-700
+
+                          ${
+                            activeStep > i
+                              ? "bg-blue-500 shadow-[0_0_20px_rgba(59,130,246,0.5)]"
+                              : "bg-blue-200"
+                          }
+                        `}
                       ></div>
 
                     </div>
                   )}
                 </div>
               ))}
+
             </div>
           </div>
         </div>
-      </section>
 
-      {/* SKIN SCIENCE */}
-      <section className="relative py-20 md:py-32  bg-linear-to-br from-[#050B0A] via-[#071A16] to-[#0B2A22] overflow-hidden">
+        {/* BOTTOM QUOTE */}
+        <div className="mt-24 text-center">
 
-        <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-[radial-gradient(circle,#ffffff_1px,transparent_1px)] bg-size-[40px_40px]"></div>
+          <div
+            className="
+              inline-block
+              bg-gradient-to-r
+              from-blue-600
+              to-cyan-500
+              text-white
+              px-8 md:px-12
+              py-6
+              rounded-[2rem]
+              shadow-[0_20px_60px_rgba(37,99,235,0.2)]
+              hover:scale-105
+              transition-all
+              duration-500
+            "
+          >
 
-        <div className="relative max-w-7xl mx-auto px-4 md:px-6 text-center">
-
-          <div className="inline-block px-4 py-2 rounded-full bg-green-400/10 border border-green-300/20 mb-6 md:mb-8">
-            <p className="text-green-300 uppercase tracking-[3px] text-xs md:text-sm font-semibold">
-              Skin-Conscious Chemistry
+            <p className="text-lg md:text-2xl font-semibold leading-relaxed">
+              “Not just detergent formulation —
+              <br className="hidden md:block" />
+              this is intelligent eco-cleaning science.”
             </p>
+
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-7xl font-black text-white leading-tight max-w-5xl mx-auto">
-            WHAT TOUCHES FABRIC
-            <span className="block text-green-300">
-              EVENTUALLY TOUCHES SKIN
-            </span>
-          </h2>
-
-          <p className="mt-6 md:mt-8 text-gray-300 text-base md:text-xl max-w-3xl mx-auto leading-relaxed">
-            Scientific formulation focused on comfort, residue reduction, and
-            fabric softness through optimized rinse behavior.
-          </p>
-
-          {/* CARDS */}
-          <div className="mt-14 md:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-
-            {[
-              "pH-balanced formulation",
-              "Controlled surfactant levels",
-              "Reduced chemical residue",
-              "Gentle rinse behavior",
-            ].map((item, i) => (
-
-              <div
-                key={i}
-                className="group bg-white/10 backdrop-blur-xl border border-white/10 rounded-[30px] p-6 md:p-8 hover:-translate-y-4 hover:bg-white/15 hover:shadow-[0_0_40px_rgba(74,222,128,0.3)] transition-all duration-700"
-              >
-
-                <div className="w-14 h-14 md:w-16 md:h-16 mx-auto rounded-full border-4 border-green-300 flex items-center justify-center text-green-300 text-xl md:text-2xl font-black mb-5 md:mb-6 group-hover:rotate-180 transition duration-700">
-                  {i + 1}
-                </div>
-
-                <p className="text-white text-base md:text-lg font-semibold leading-relaxed">
-                  {item}
-                </p>
-
-              </div>
-            ))}
-          </div>
         </div>
-      </section>
 
-    </div>
+      </div>
+    </section>
   );
 }
