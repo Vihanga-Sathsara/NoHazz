@@ -74,7 +74,8 @@ function LandingPage() {
 
                 </div>
     <div className="hidden md:flex items-center gap-3 lg:gap-4">
-        <button className="
+        <button  onClick={() => window.open("https://erp.nohazz.com/store", "_blank")}
+            className="
             px-5 py-2 rounded-full
             bg-green-600 text-white
             hover:bg-green-700 transition
@@ -83,7 +84,8 @@ function LandingPage() {
             Customer Portal
           </button>
 
-          <button className="
+          <button  onClick={() => window.open(" https://erp.nohazz.com", "_blank")}
+            className="
             px-5 py-2 rounded-full
             bg-blue-600 text-white
             hover:bg-blue-700 transition

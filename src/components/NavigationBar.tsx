@@ -66,11 +66,13 @@ function NavigationBar() {
         {/* DESKTOP ONLY BUTTONS (lg+) */}
         <div className="hidden lg:flex gap-3">
 
-          <button className="px-5 py-2 rounded-full bg-green-600 text-white">
+          <button onClick={() => window.open("https://erp.nohazz.com/store", "_blank")}
+          className="px-5 py-2 rounded-full bg-green-600 text-white">
             Customer
           </button>
 
-          <button className="px-5 py-2 rounded-full bg-blue-600 text-white">
+          <button onClick={() => window.open(" https://erp.nohazz.com", "_blank")}
+          className="px-5 py-2 rounded-full bg-blue-600 text-white">
             Admin
           </button>
 
@@ -98,18 +100,20 @@ function NavigationBar() {
           {menu.map((item) => (
             <button
               key={item.name}
-              onClick={() => openNewTab(item.path)}
+              onClick={() => window.open(item.path, "_blank")}
               className="text-left text-gray-700 hover:text-blue-600"
             >
               {item.name}
             </button>
           ))}
 
-          <button className="px-4 py-2 bg-green-600 text-white rounded-full">
+          <button onClick={() => window.open("https://erp.nohazz.com/store", "_blank")}
+          className="px-4 py-2 bg-green-600 text-white rounded-full">
             Customer Portal
           </button>
 
-          <button className="px-4 py-2 bg-blue-600 text-white rounded-full">
+          <button onClick={() => window.open(" https://erp.nohazz.com", "_blank")}
+          className="px-4 py-2 bg-blue-600 text-white rounded-full">
             Admin Portal
           </button>
 
